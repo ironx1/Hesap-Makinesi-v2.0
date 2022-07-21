@@ -1,5 +1,5 @@
 /*
-	Name: Calculator 2.0.0
+	Name: Calculator 2.0.2
 	Copyright: 
 	Author: ironx1
 	Date: 22.07.22 00:01
@@ -12,40 +12,55 @@ int main() {
 	double sayi,sayi2;//iki değişkene ihtiyacımız var
 	char islem[0];
 	setlocale(LC_ALL, "Turkish");
-	printf("bir sayı giriniz: ");
+	printf("\n-Toplama(+)-\n-Çıkarma(-)-\n-Çarpma(*)-\n-Bölme(/)-\n-Çıkış(q)-\n-Temizle(t)-\n");
+	printf("\nİlk Sayı: ");
 	scanf("%lf",&sayi);
-	printf("\n-Toplama(+)-\n-Çıkarma(-)-\n-Çarpma(*)-\n-Bölme(/)-\n-Sonuç(q)-\n");
 	while(islem[0]!='q') { //işlem[0] değeri q değerine eşit olmadığı sürece program çalışacak
 		printf("\nİşlem seçiniz: ");
 		scanf("%s",&islem[0]);
 		switch(islem[0]) {
 			case '+':
-				printf("Bir Sayı Giriniz: ");
+				printf("\nBir Sayı Giriniz: ");
 				scanf("%lf",&sayi2);
 				sayi += sayi2;
+				printf("\nSonuç=%.2lf\n",sayi);
+				
 			break;
 			case '-':
-				printf("Bir Sayı Giriniz: ");
+				printf("\nBir Sayı Giriniz: ");
 				scanf("%lf",&sayi2);	
 				sayi -= sayi2;
+				printf("\nSonuç=%.2lf\n",sayi);
 			break;
 			case '*':
-				printf("Bir Sayı Giriniz: ");
+				printf("\nBir Sayı Giriniz: ");
 				scanf("%lf",&sayi2);	
 				sayi *= sayi2;
+				printf("\nSonuç=%.2lf\n",sayi);
 			break;
 			case '/':
-				printf("Bir Sayı Giriniz: ");
+				printf("\nBir Sayı Giriniz: ");
 				scanf("%lf",&sayi2);	
 				sayi /= sayi2;
+				printf("\nSonuç=%lf\n",sayi);
 			break;		
 			default:
-				if(sayi<0){
-					printf("Sonuç = -%.2lf",sayi);
+				if(islem[0]=='q'){
+					printf("\nÇıkış Yapılıyor...\n");
 				}
-				else{
-					printf("Sonuç = %.2lf", sayi);
-				}	
+				else if(islem[0]='t'){
+					printf("\nTemizleniyor...\n");
+				}
+				else {
+					printf("\nHatalı giriş yaptınız.\n");
+				}
+		if (islem[0]=='t'){
+			sayi = 0;
+			sayi2 = 0;
+			printf("\nİlk Sayı: ");
+			scanf("%lf",&sayi);
+		}		
+					
 		}
 	}
 	
