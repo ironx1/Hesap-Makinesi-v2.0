@@ -1,5 +1,5 @@
 /*
-	Name: Calculator 2.0.2
+	Name: Calculator 2.0.3
 	Copyright: 
 	Author: ironx1
 	Date: 22.07.22 00:01
@@ -40,9 +40,16 @@ int main() {
 			break;
 			case '/':
 				printf("\nBir Sayı Giriniz: ");
-				scanf("%lf",&sayi2);	
-				sayi /= sayi2;
-				printf("\nSonuç=%lf\n",sayi);
+				scanf("%lf",&sayi2);
+				if(sayi2==0) {
+					printf("Tanımsız");
+					
+				}
+				else{
+					sayi /= sayi2;
+					printf("\nSonuç=%lf\n",sayi);
+				}	
+				
 			break;		
 			default:
 				if(islem[0]=='q'){
